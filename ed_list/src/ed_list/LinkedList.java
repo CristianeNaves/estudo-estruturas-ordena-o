@@ -17,7 +17,7 @@ class LinkedNode{
 		next = null;
 	}
 }
-public class LinkedList {
+public class LinkedList implements List{
 	public LinkedNode head;
 	public int size;
 	public int pos;
@@ -29,7 +29,7 @@ public class LinkedList {
 	
 	public void insert(int item, int pos){
 		if(pos > size  || pos < 0)
-			System.out.println("posicao invalida");
+			throw new InvalidArgumentException();
 		else{
 			if(size == 0){
 				head = new LinkedNode(item);
@@ -43,13 +43,6 @@ public class LinkedList {
 					temp = temp.next;
 				}
 				temp.next = new LinkedNode(item, temp.next);
-			//	for(int i = 2; i < pos; i++){
-				//	temp = temp.next;
-			//	}
-				//if(pos == size + 1)
-			//		temp = new LinkedNode(item);
-			//	else
-				//	temp = new LinkedNode(item, temp);
 			}
 			size++;
 		}
@@ -57,7 +50,7 @@ public class LinkedList {
 	}
 	public void delete(int pos){
 		if(pos < 0 || pos >= size)
-			System.out.println("posicao invalida");
+			throw new InvalidArgumentException();
 			
 		if(pos == 0){
 			head = head.next;
@@ -67,43 +60,25 @@ public class LinkedList {
 			for(int i = 0; i < pos - 1; i++){
 				temp = temp.next;
 			}
-			temp = temp.next;
-			/*for(int i = 1; i < pos - 1; i++)
-				temp = temp.next;
-			if(pos < size){
-				temp = temp.next;
-			}
-			if(pos == size)
-				temp = null;
-			*/
-			
+			temp.next = temp.next.next;
 		}
 		size--;
 			
 	}
 		
 	public int elementAt(int pos){
-		LinkedNode t = head;
-		System.out.println("t.item do head: " + t.item);
-		for(int i = 0; i < pos; i++){
-			t = t.next;
-			System.out.println("t.item do t.next: " + t.item);
+		if(pos < 0 || pos >= size){
+			throw new InvalidArgumentException();
 		}
-		System.out.println("t.item depois que sair do loop:" + t.item);
-		return t.item;
-		
+		else{
+			LinkedNode t = head;
+			for(int i = 0; i < pos; i++){
+				t = t.next;
+			}
+			return t.item;
+		}
 	}
-/*	public int find(int valorPos){
-		int i = 1;
-		//fazer validações
-		LinkedNode temp = head;
-		while(temp.item != valorPos){
-			System.out.println("entrei no while");
-			temp = temp.next;
-			i++;
-		}
-		return i;
-	}*/
+
 	public int find(int value) {
 		LinkedNode temp = head;
 		for(int i = 0; i < size; i++) {
@@ -112,23 +87,31 @@ public class LinkedList {
 			}
 			temp = temp.next;
 		}
-		return -1;
+		throw new InvalidArgumentException();
 	}
 	
 	public int size(){
-		System.out.println("tamanho: " + size);
 		return size;
 	}
-	/*
+	
 	public void show(){
-		LinkedNode t = head;
-		for(int i = 1; i <= size; i++){
-			System.out.println("estou aqui" +t.item);
-			t = t.next;
+		for(int i = 0; i < size; i++){
+			System.out.println(elementAt(i));
 		}
 			
-			//System.out.println(elementAt(i));
+	}
+	public void troca(int i, int j){
 		
-	}*/
+		
+		/*int tempI = elementAt(i);
+		int tempJ = elementAt(j);
+		delete(i);
+		delete(j);
+		insert(tempI, j);
+		insert(tempJ, i);
+		arrumar esse codigo para funcionar para mais posicoes
+		*/
+		
+	}
 
 }
