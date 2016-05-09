@@ -4,9 +4,10 @@ package ed_list;
 public interface List {
 	
 	public int find(int value);
-	public int elementAt(int pos);   //colocar as excecoes quando possivel
+	public int elementAt(int pos);   
 	public void insert(int value, int pos);
 	public void delete(int pos);
-	public void troca(int i, int j);
 	public void show();
+	public void troca(int i, int j);
+	public int size();
 }

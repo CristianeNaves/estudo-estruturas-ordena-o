@@ -1,0 +1,25 @@
+package ed_list;
+
+public class HashTable {
+	int m;
+	int[] array;
+	
+	//pegar o m do usuario  = 
+	
+	public HashTable(int m){
+		this.m = m;
+		array = new int[m];
+	}
+	
+	public int Hash(int Key){
+		return Key % m;
+	}
+	
+	public void insert(int Key, int value){
+		int idx = Hash(Key);
+		
+	}
+	
+	
+	
+}

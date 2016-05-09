@@ -1,0 +1,23 @@
+package ed_test;
+
+
+import ed_list.HashTable;
+public class HashTableTest {
+	
+	public static void main(String[] args){
+		int m, totalNum;
+		int elemento;
+		m = 13;
+		totalNum = 9;
+			HashTable hash = new HashTable(m);
+			for(int i = 0; i < totalNum; i++){
+				elemento = 44 + i;
+				hash.insert(elemento, elemento);
+			}
+			
+			hash.Find(44).show();
+
+	
+	
+	}
+}

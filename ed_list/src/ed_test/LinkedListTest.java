@@ -47,21 +47,17 @@ public class LinkedListTest extends TestCase {
 		assertEquals(2, Slist.elementAt(0));
 		assertEquals(0, Slist.find(2));
 		assertEquals(2, Slist.find(4));
-		//Slist.show();
+		Slist.show();
 		Slist.troca(0, 2);
 		
 	}
 	public void testTroca(){
-			Slist.insert(2, 0);
-			Slist.insert(3, 1);
-			Slist.insert(4, 2);
-			assertEquals(3, Slist.size());
-			assertEquals(2, Slist.elementAt(0));
-			assertEquals(0, Slist.find(2));
-			assertEquals(2, Slist.find(4));
-			Slist.show();
-			Slist.troca(2, 1);
-			Slist.show();
+		Slist.insert(2, 0);
+		Slist.insert(3, 1);
+		Slist.insert(4, 2);
+		Slist.show();
+		Slist.troca(0, 2);
+		Slist.show();
 	}
 	
 	

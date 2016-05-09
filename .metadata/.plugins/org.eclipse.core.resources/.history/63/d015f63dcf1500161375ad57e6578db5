@@ -1,0 +1,48 @@
+package ed_ordenacoes;
+
+import ed_list.List;
+
+public class MergeSort implements AbstractSort {
+
+	@Override
+	public List ordena(List lista) {
+		long [] workSpace = new long [lista.size()];
+		recMergeSort (workSpace , 0, lista.size() - 1, lista);
+		
+		return lista;
+	}
+	private void recMergeSort ( long [] workSpace, int lowerBound , int upperBound, List lista){
+		if( lowerBound== upperBound)
+		return ;
+		else {
+			int mid = (lowerBound + upperBound)/ 2;
+			recMergeSort ( workSpace, lowerBound, mid, lista);
+			recMergeSort (workSpace, mid+1, upperBound, lista);
+			merge (workSpace, lowerBound, mid +1 , upperBound, lista); 
+		}
+	}
+	private void merge (long [] workSpace, int lowPtr, int highPtr , int upperBound, List lista) {
+		int j = 0;
+		int lowerBound = lowPtr;
+		int mid = highPtr -1 ;
+		int n = upperBound -lowerBound +1;
+		while(lowPtr <= mid && highPtr <= upperBound)
+		   if(lista.elementAt(lowPtr) < lista.elementAt(highPtr))
+		         workSpace [j++] = lista.elementAt(lowPtr++);
+		         else
+		         workSpace [j++] = lista.elementAt(highPtr++);
+
+		while(lowPtr<=mid)
+		workSpace [j++] = lista.elementAt(lowPtr++);
+
+		while(highPtr<=upperBound)
+		workSpace[j++] = lista.elementAt(highPtr++);
+		for (j= 0 ; j < n ; j++){
+			long elementJ;
+			elementJ = workSpace[j];
+			lista.delete(lowerBound + j);
+			lista.insert((int)elementJ, lowerBound + j);
+		}
+	}
+
+}

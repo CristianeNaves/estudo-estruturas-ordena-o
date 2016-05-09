@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="ed_list.DLinkedList"/>
+<fullyQualifiedTypeName name="ed_ordenacoes.MergeSort"/>
+<fullyQualifiedTypeName name="ed_ordenacoes.SelectionImpl"/>
+<fullyQualifiedTypeName name="ed_ordenacoes.QuickSortImpl"/>
+<fullyQualifiedTypeName name="ed_list.List"/>
+<fullyQualifiedTypeName name="ed_list.CircularList"/>
+<fullyQualifiedTypeName name="junit.framework.TestCase"/>
+<fullyQualifiedTypeName name="ed_list.HeapImpl"/>
+</qualifiedTypeNameHistroy>

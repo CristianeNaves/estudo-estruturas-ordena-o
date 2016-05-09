@@ -1,0 +1,110 @@
+package ed_list;
+
+
+class DLinkedNode{
+	DLinkedNode next;
+	DLinkedNode prev;
+	int value;
+	
+	public DLinkedNode(int value){
+		this.value = value;
+	}
+	
+	public int getValue(int value){
+		return value;
+	}
+	public void setValue(int value){
+		this.value = value;
+	}
+	public DLinkedNode getNext(){
+		return next;
+	}
+	public void setNext(DLinkedNode next){
+		this.next = next;
+	}
+	public DLinkedNode getPrev(DLinkedNode prev){
+		return prev;
+	}
+	public void setPrev(DLinkedNode prev){
+		this.prev = prev;
+	}
+}
+
+
+
+
+public class DLinkedList implements List{
+	public int size;
+	public DLinkedNode head;
+	public DLinkedNode tail;
+	
+	public DLinkedList(){
+		head = null;                                                   //new DLinkedNode(null,null,null);      //precisaria instanciar esse head? o que seria null?
+		tail = null;                                                  //new DLinkedNode(null, head, null);  // poderia colocar head = null; trail = null; 
+		size = 0;
+	}
+	
+	public void insert(int value, int pos) {
+		DLinkedNode newNode = new DLinkedNode(value);
+		if(size == 0){
+			head = newNode;
+			tail = newNode;
+		}
+		
+		else if(pos == 0){
+			newNode.setNext(head);
+			head.setPrev(newNode);
+			head = newNode;
+		}
+		
+		
+		
+		size++;
+	}
+	
+	@Override
+	public int find(int value) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int elementAt(int pos) {
+			if(pos < 0 || pos >= size){
+				throw new InvalidArgumentException();
+			}
+			else{
+				DLinkedNode t = head;
+				for(int i = 0; i < pos; i++){
+					t = t.next;
+				}
+				return t.value;
+			}
+		
+	}
+
+	@Override
+	public void delete(int pos) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void troca(int i, int j) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void show() {
+		for(int i = 0; i < size; i++){
+			System.out.println(elementAt(i));
+		}
+	}
+
+
+	public int size() {
+		return size;
+	}
+	
+}

@@ -1,0 +1,19 @@
+package ed_ordenacoes;
+import ed_list.List;
+public class SelectionImpl implements AbstractSort  {
+
+	@Override
+	public List ordena(List lista) {
+		int out , in , min;
+        for(out =0 ; out < lista.size() ; out++){
+            min = out;
+            for(in = out + 1 ; in < lista.size() ; in++)
+                if(lista.elementAt(in) < lista.elementAt(min))
+                    min = in;
+            lista.troca(out , min);
+            
+        }
+		return lista;
+	}	
+	
+}

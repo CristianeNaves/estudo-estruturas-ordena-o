@@ -1,0 +1,94 @@
+package ed_list;
+
+class CNode{
+	int value;
+	CNode next;
+	CNode prev;
+	
+	public CNode(int value){
+		this.value = value;
+	}
+	public int getValue(int value){
+		return value;
+	}
+	public void setValue(int value){
+		this.value = value;
+	}
+	public CNode getNext(){
+		return next;
+	}
+	public void setNext(CNode next){
+		this.next = next;
+	}
+	public CNode getPrev(){
+		return prev;
+	}
+	public void setPrev(CNode prev){
+		this.prev = prev;
+	}
+	
+}
+public class CircularList implements List {
+	CNode cursor;
+	int size;
+	
+	public CircularList(){
+		cursor = null;
+		size = 0;
+	}
+
+	@Override
+	public void insert(int value, int pos) {
+		CNode newNode = new CNode(value);
+		if(size == 0){
+			cursor = newNode;
+			newNode.setNext(cursor);
+			newNode.setPrev(cursor);
+			cursor.setPrev(newNode);
+			cursor.setNext(newNode);
+		}
+		else if(pos == 0){
+			newNode.setNext(cursor);
+			cursor.setPrev(newNode);
+		}
+		else{
+			
+		}
+	}
+
+	@Override
+	public void delete(int pos) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	@Override
+	public int find(int value) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int elementAt(int pos) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void troca(int i, int j) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void show() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public int size() {
+				return size;
+	}
+	    
+	
+}

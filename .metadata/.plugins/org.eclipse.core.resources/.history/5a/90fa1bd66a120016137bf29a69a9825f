@@ -1,0 +1,38 @@
+package ed_list;
+
+public class QueueImpl implements Queue {
+	private List elements;
+	
+	public QueueImpl(){
+		elements = new LinkedList();
+	}
+	
+	public void enqueue(int value) { //adiciona na ultima posicao
+		elements.insert(value, elements.size());
+	}
+
+	@Override
+	public int dequeue() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public boolean isEmpty() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public int size() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void clear() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

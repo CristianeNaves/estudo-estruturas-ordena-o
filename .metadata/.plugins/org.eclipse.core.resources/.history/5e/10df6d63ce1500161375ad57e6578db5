@@ -1,0 +1,12 @@
+package ed_list;
+
+
+public interface List {
+	
+	public int find(int value);
+	public int elementAt(int pos);   
+	public void insert(int value, int pos);
+	public void delete(int pos);
+	public void show();
+	public int size();
+}

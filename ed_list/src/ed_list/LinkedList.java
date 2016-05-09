@@ -101,16 +101,12 @@ public class LinkedList implements List{
 			
 	}
 	public void troca(int i, int j){
-		
-		
-		/*int tempI = elementAt(i);
-		int tempJ = elementAt(j);
+		int value1 = elementAt(i);
+		int value2 = elementAt(j);
 		delete(i);
+		insert(value2, i);
 		delete(j);
-		insert(tempI, j);
-		insert(tempJ, i);
-		arrumar esse codigo para funcionar para mais posicoes
-		*/
+		insert(value1, j);
 		
 	}
 

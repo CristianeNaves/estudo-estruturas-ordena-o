@@ -1,0 +1,26 @@
+package ed_test;
+
+import java.util.Random;
+import ed_list.LinkedList;
+import ed_list.List;
+import ed_ordenacoes.QuickSortImpl;
+import junit.framework.TestCase;
+
+public class QuickSortImplTest extends TestCase {
+
+	public void testOrdena(){
+		List lista = new LinkedList();
+		QuickSortImpl sort = new QuickSortImpl();
+		Random numAleatorio = new Random();
+		for(int i = 0; i < 10; i ++){
+			lista.insert(numAleatorio.nextInt(100), i);
+		}
+		lista.show();
+		sort.ordena(lista);
+		lista.show();
+	}
+	
+
+	
+
+}

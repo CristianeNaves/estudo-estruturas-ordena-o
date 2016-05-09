@@ -1,0 +1,28 @@
+package ed_list;
+
+class CNode{
+	int value;
+	CNode next;
+	
+	public CNode(int value){
+		this.value = value;
+	}
+	public int getValue(int value){
+		return value;
+	}
+	public void setValue(int value){
+		this.value = value;
+	}
+	public CNode getNext(){
+		return next;
+	}
+	public void setNext(CNode next){
+		this.next = next;
+	}
+	
+}
+public class CircularList {
+	CNode cursor;
+	    
+	
+}

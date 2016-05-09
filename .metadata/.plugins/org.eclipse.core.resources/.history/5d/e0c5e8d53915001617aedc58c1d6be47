@@ -1,0 +1,37 @@
+package ed_test;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import ed_list.ArrayList;
+import ed_list.HeapImpl;
+import junit.framework.TestCase;
+
+public class HeapImplTest extends TestCase {
+
+    public HeapImpl Heap;
+	
+	public void setUp() {
+		Heap = new HeapImpl();
+	}
+	
+	public void testInit() {
+		assertEquals(0, Heap.size());
+	}
+	public void testEnqueue(){
+		Heap.enqueue(42);
+		Heap.enqueue(1);
+		Heap.enqueue(7);
+		assertEquals(3, Heap.size());
+		Heap.enqueue(100);
+		Heap.show();
+	}
+	public void testDequeue(){
+		Heap.enqueue(100);
+		Heap.enqueue(42);
+		Heap.enqueue(7);
+		Heap.enqueue(1);
+		Heap.show();
+	}
+}

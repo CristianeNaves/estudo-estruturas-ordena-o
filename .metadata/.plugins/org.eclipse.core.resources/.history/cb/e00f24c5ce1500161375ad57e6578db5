@@ -1,0 +1,15 @@
+package ed_list;
+
+public class Link {
+	 public long dData;
+	    public Link next;
+	    public Link previous;
+	    
+	    public Link(long d){
+	        dData = d;
+	    }
+	    
+	    public void displayList(){
+	        System.out.print(dData + " ");
+	    }
+}

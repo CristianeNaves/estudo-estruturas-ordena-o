@@ -1,0 +1,59 @@
+package ed_list;
+
+
+public class HeapImpl implements Heap {
+
+	List lista;    
+	int size;
+	
+	public HeapImpl(){
+		size = 0;
+		//precisa criar um array lista?
+	}
+	public boolean isEmpty() {
+		return (lista.size() == 0);
+	}
+	public int parent(int i){
+		return i/2;
+	}
+	public int left(int i){
+		return 2 * i;
+	}
+	public int right(int i){
+		return (2 * i) + 1;
+	}
+	public void maxHeapify(int idx){
+		int largest = idx;
+		int left = left(idx);
+		int right = right(idx);
+		
+		if(lista.elementAt(left) > lista.elementAt(largest))
+			largest = left;
+		if(lista.elementAt(right) > lista.elementAt(largest))
+			largest = right;
+		if(largest != idx){
+			lista.troca(largest, idx);
+		}
+		
+	}
+	
+
+	@Override
+	public void enqueue(int value) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public int dequeue() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int size() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

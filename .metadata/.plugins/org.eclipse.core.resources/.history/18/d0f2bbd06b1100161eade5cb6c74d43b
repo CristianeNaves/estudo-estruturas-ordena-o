@@ -1,0 +1,77 @@
+package ed_list;
+
+
+class DLinkedNode{
+	DLinkedNode next;
+	DLinkedNode prev;
+	int value;
+	
+	public DLinkedNode(int value, DLinkedNode next, DLinkedNode prev){
+		this.value = value;
+		this.next = next;
+		this.prev = prev;
+	}
+
+}
+
+
+
+
+public class DLinkedList implements List{
+	public int size;
+	public DLinkedNode head;
+	public DLinkedNode tail;
+	
+	public DLinkedList(){
+		head = null;  //precisaria instanciar esse head? o que seria null?
+		tail = null;
+		size = 0;
+	}
+	
+	public void insert(int value, int pos) {
+		if(size == 0){
+			head = new DLinkedNode(value, tail, head);
+		}
+		
+		
+		
+		
+	}
+	
+	@Override
+	public int find(int value) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int elementAt(int pos) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void delete(int pos) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void troca(int i, int j) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void show() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public int size() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
+}

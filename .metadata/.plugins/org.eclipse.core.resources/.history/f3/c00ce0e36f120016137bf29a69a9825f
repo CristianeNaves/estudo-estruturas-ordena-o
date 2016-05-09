@@ -1,0 +1,6 @@
+package projeto_01;
+
+public class listaAjustavel implements List{
+	
+		
+}

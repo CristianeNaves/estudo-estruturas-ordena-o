@@ -1,0 +1,49 @@
+package projeto_01;
+
+import ed_list.List;
+
+public class listaAjustavel implements List{
+	@Override
+	public int find(int value) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int elementAt(int pos) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void insert(int value, int pos) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void delete(int pos) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void troca(int i, int j) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void show() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public int size() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
+		
+}

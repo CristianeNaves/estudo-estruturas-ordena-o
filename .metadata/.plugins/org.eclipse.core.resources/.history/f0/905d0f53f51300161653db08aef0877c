@@ -1,0 +1,34 @@
+package ed_test;
+
+import ed_list.CircularList;
+import junit.framework.TestCase;
+
+public class CircularTest extends TestCase {
+
+	public CircularList Clist;
+	
+	public void setUp() {
+		Clist = new CircularList();
+	}
+	
+	public void testInit() {
+		assertEquals(0, Clist.size());
+	}
+	
+	
+	
+	public void testInsert(){
+		Clist.insert(10, 0);
+		assertEquals(1, Clist.size());
+		//Dlist.insert(42, 0);
+		//assertEquals(2, Dlist.size());
+		//assertEquals(42, Dlist.elementAt(0));
+		//Dlist.insert(7, 2);
+		//assertEquals(7, Dlist.elementAt(2));
+		//Dlist.show();
+	}
+	
+	
+	
+	
+}

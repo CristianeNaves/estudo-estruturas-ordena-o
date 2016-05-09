@@ -1,0 +1,42 @@
+package ed_list;
+
+public class StackImpl implements Stack {
+	private List elements;
+	public StackImpl(){
+		elements = new LinkedList();
+	}
+	
+	@Override
+	public void push(int value) {
+		elements.insert(value, elements.size());
+	}
+
+	@Override
+	public int pop() {
+		int value = elements.elementAt(elements.size() - 1);
+		elements.delete(elements.size() - 1);
+		return value;
+	}
+
+	@Override
+	public int top() {
+		return elements.elementAt(elements.size() - 1);
+	}
+
+	@Override
+	public boolean isEmpty() {
+		return (elements.size() == 0);
+	}
+
+	@Override
+	public int size() {
+		return elements.size();
+	}
+
+	@Override
+	public void clear() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

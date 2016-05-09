@@ -1,0 +1,28 @@
+package ed_list;
+import java.util.Scanner;
+public class HashTable {
+	int m;
+	LinkedList[] array;
+//	private static Scanner entrada;
+	
+		//pegar o m do usuario  = 
+	
+	public HashTable(int m){
+		this.m = m;
+		array = new LinkedList[m];
+	}
+	
+	public int Hash(int Key){
+		return Key % m;
+	}
+	
+	public void insert(int Key, int value){
+		int idx = Hash(Key);
+		if(array[idx] == null){
+			array[idx] = new LinkedList();
+		}
+		array[idx].insert(value, 0);
+		
+	}
+
+}
